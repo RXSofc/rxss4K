@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ARIQ / ARCHIVE</title>
+<meta name="description" content="Personal archive of Moch Ariiq Aditya — developer & tinkerer." />
+<meta name="theme-color" content="#F0EDE5" />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="ARIQ / ARCHIVE" />
+<meta property="og:description" content="Personal archive of Moch Ariiq Aditya — developer & tinkerer." />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="ARIQ / ARCHIVE" />
+<meta name="twitter:description" content="Personal archive of Moch Ariiq Aditya — developer & tinkerer." />
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23F0EDE5'/%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-style='italic' font-size='20' fill='%23060D0C' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+<link rel="preconnect" href="https://cdn.jsdelivr.net" />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&family=Newsreader:ital,wght@1,400;1,500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<noscript>
+  <div class="noscript-banner">This archive needs JavaScript enabled to load the project index and contact channels.</div>
+</noscript>
+
+<!-- faint dotted background -->
+<div class="bg-grid" aria-hidden="true"></div>
+
+<!-- NAVIGATION -->
+<nav class="nav" aria-label="Archive index">
+  <a class="nav-brand" href="#identity">ARIQ<span>/ARCHIVE</span></a>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-list">INDEX</button>
+  <ul id="nav-list" class="nav-list">
+    <li><a href="#identity"><em>01</em>IDENTITY</a></li>
+    <li><a href="#projects"><em>02</em>PROJECTS</a></li>
+    <li><a href="#about"><em>03</em>ABOUT</a></li>
+    <li><a href="#contact"><em>04</em>CONTACT</a></li>
+  </ul>
+</nav>
+
+<main>
+
+<!-- ============ 01 IDENTITY ============ -->
+<section id="identity" class="layer layer-1 identity">
+  <div class="wrap">
+
+    <header class="id-meta reveal">
+      <span>ARCHIVE / 001</span>
+      <span class="id-meta-right">EST. 2026 · <span data-clock>00:00:00</span></span>
+    </header>
+
+    <div class="bento">
+      <!-- big type block -->
+      <div class="bento-type">
+        <h1 class="display reveal">
+          <span class="line">MOCH</span>
+          <span class="line">ARIIQ<sup>*</sup></span>
+          <span class="line indent">ADITYA</span>
+        </h1>
+        <p class="role reveal">DEVELOPER / TINKERER</p>
+        <p class="tagline reveal">Building things with code, hardware<br/>and an unreasonable amount of curiosity.</p>
+        <p class="footnote reveal"><sup>*</sup>yes, that's the full name.</p>
+      </div>
+
+      <!-- 3D mascot, no decorative frame — the render stands on its own -->
+      <figure class="bento-photo reveal">
+        <div class="avatar-3d" id="avatar-3d">
+          <canvas id="avatar-canvas" aria-label="Interactive 3D character mascot — drag to rotate"></canvas>
+          <div class="avatar-loading" id="avatar-loading" aria-hidden="true">LOADING MODEL…</div>
+          <div class="photo-monogram" aria-hidden="true">MAA</div>
+        </div>
+        <figcaption>FIG. 01 — THE MASCOT (LIVE)<br/>FILE: EVILVOIDTEAM_ICON.GLB · <span class="avatar-hint" id="avatar-hint">drag to rotate</span></figcaption>
+      </figure>
+
+      <!-- github card -->
+      <article class="bento-gh reveal" id="github-card">
+        <h2 class="label">CURRENT STATE / GITHUB</h2>
+        <div class="gh-body" id="gh-body">
+          <p class="gh-fallback">GITHUB<br/><a href="https://github.com/rixs4k">github.com/rixs4k</a></p>
+        </div>
+        <p class="sys-line">SYSTEM.STATUS / ONLINE</p>
+      </article>
+    </div>
+
+    <footer class="id-footer reveal">
+      <a class="btn-hard" href="#projects">SCROLL ↓ EXPLORE ARCHIVE</a>
+      <span class="coord">06°12′S 106°49′E</span>
+    </footer>
+
+  </div>
+</section>
+
+<!-- ============ 02 PROJECTS ============ -->
+<section id="projects" class="layer layer-2 projects">
+  <div class="wrap">
+    <header class="sec-head">
+      <h2 class="sec-title">PROJECT<span>_INDEX</span></h2>
+      <span class="sec-meta">05 ITEMS / STACKED CHRONOLOGICALLY</span>
+    </header>
+    <!-- folders injected by JS into #folder-stack -->
+    <ol class="folder-stack" id="folder-stack"></ol>
+    <p class="stack-hint">↑ tap a folder to open it</p>
+  </div>
+</section>
+
+<!-- ============ 03 ABOUT ============ -->
+<section id="about" class="layer layer-3 about">
+  <div class="wrap">
+    <header class="sec-head">
+      <h2 class="sec-title">PERSONAL<span>_LOG</span></h2>
+      <span class="sec-meta">HOW I GOT HERE</span>
+    </header>
+
+    <div class="about-grid">
+      <p class="about-lede reveal-up">It started with curiosity.<br/>
+      <span class="serif">Not the tidy kind — the kind that takes things apart.</span></p>
+
+      <ol class="timeline reveal-up">
+        <li class="tl-item">
+          <button type="button" class="tl-head" aria-expanded="false" aria-controls="tl-panel-0">
+            <span class="tl-marker" aria-hidden="true"></span>
+            <span class="tl-heading"><span class="tl-tag">ENTRY / A</span><h3>ELECTRICITY</h3></span>
+            <span class="tl-chevron" aria-hidden="true"></span>
+          </button>
+          <div class="tl-collapse"><div class="tl-collapse-inner" id="tl-panel-0">
+            <p>A house full of broken radios and extension cords I probably shouldn't have opened.</p>
+          </div></div>
+        </li>
+        <li class="tl-item">
+          <button type="button" class="tl-head" aria-expanded="false" aria-controls="tl-panel-1">
+            <span class="tl-marker" aria-hidden="true"></span>
+            <span class="tl-heading"><span class="tl-tag">ENTRY / B</span><h3>ELECTRONICS</h3></span>
+            <span class="tl-chevron" aria-hidden="true"></span>
+          </button>
+          <div class="tl-collapse"><div class="tl-collapse-inner" id="tl-panel-1">
+            <p>Breadboards, solder smoke, and learning that capacitors have polarity the hard way.</p>
+          </div></div>
+        </li>
+        <li class="tl-item">
+          <button type="button" class="tl-head" aria-expanded="false" aria-controls="tl-panel-2">
+            <span class="tl-marker" aria-hidden="true"></span>
+            <span class="tl-heading"><span class="tl-tag">ENTRY / C</span><h3>ESP32 / IOT</h3></span>
+            <span class="tl-chevron" aria-hidden="true"></span>
+          </button>
+          <div class="tl-collapse"><div class="tl-collapse-inner" id="tl-panel-2">
+            <p>Sensors everywhere. My room reported its own temperature before I did anything useful with it.</p>
+          </div></div>
+        </li>
+        <li class="tl-item">
+          <button type="button" class="tl-head" aria-expanded="false" aria-controls="tl-panel-3">
+            <span class="tl-marker" aria-hidden="true"></span>
+            <span class="tl-heading"><span class="tl-tag">ENTRY / D</span><h3>PROGRAMMING</h3></span>
+            <span class="tl-chevron" aria-hidden="true"></span>
+          </button>
+          <div class="tl-collapse"><div class="tl-collapse-inner" id="tl-panel-3">
+            <p>The hardware asked questions the firmware couldn't answer. So I went looking for better tools.</p>
+          </div></div>
+        </li>
+        <li class="tl-item">
+          <button type="button" class="tl-head" aria-expanded="false" aria-controls="tl-panel-4">
+            <span class="tl-marker" aria-hidden="true"></span>
+            <span class="tl-heading"><span class="tl-tag">ENTRY / E</span><h3>WEB DEVELOPMENT</h3></span>
+            <span class="tl-chevron" aria-hidden="true"></span>
+          </button>
+          <div class="tl-collapse"><div class="tl-collapse-inner" id="tl-panel-4">
+            <p>The browser turned out to be the most honest workbench I've ever used. Break it, refresh, fix it.</p>
+          </div></div>
+        </li>
+        <li class="tl-item">
+          <button type="button" class="tl-head" aria-expanded="false" aria-controls="tl-panel-5">
+            <span class="tl-marker" aria-hidden="true"></span>
+            <span class="tl-heading"><span class="tl-tag">ENTRY / F</span><h3>BUILDING THINGS</h3></span>
+            <span class="tl-chevron" aria-hidden="true"></span>
+          </button>
+          <div class="tl-collapse"><div class="tl-collapse-inner" id="tl-panel-5">
+            <p>Still here. Still taking things apart. Currently curious about whatever's on the next page of this log.</p>
+          </div></div>
+        </li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 04 CONTACT ============ -->
+<section id="contact" class="layer layer-4 contact">
+  <div class="wrap">
+    <header class="sec-head">
+      <h2 class="sec-title">CONTACT<span>_CHANNEL</span></h2>
+      <span class="sec-meta">OPEN CHANNEL / NO FORMS</span>
+    </header>
+
+    <p class="contact-big reveal-up">LET'S TALK<span class="dot">.</span></p>
+    <p class="contact-sub reveal-up">If you've got something interesting,<br/>you know where to find me.</p>
+
+    <div class="channel-grid" id="channels"></div>
+
+    <footer class="site-foot">
+      <span>ARIQ / ARCHIVE — END OF DOCUMENT</span>
+      <span>PAGE 04 / 04</span>
+    </footer>
+  </div>
+</section>
+
+</main>
+<!-- Three.js + GLTFLoader power the live 3D mascot (see avatar init
+     in script.js). All three are deferred, so load order is preserved;
+     if any fails (offline, blocked, etc.) the avatar init code detects
+     that and falls back to the monogram. -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js" defer></script>
+<script src="script.js" defer></script>
+</body>
+</html>
