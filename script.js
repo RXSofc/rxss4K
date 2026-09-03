@@ -51,7 +51,7 @@ const projects = [
     description: "A real-time chat app on Firebase, rebuilt with a full bug-fix pass and a deep crimson neobrutalism redesign.",
     stack: ["JavaScript", "Firebase", "CSS"],
     github: "https://github.com/RXSofc/onevone",
-    demo: ""
+    demo: "https://rxsofc.github.io/onevone/"
   },
 ];
 
