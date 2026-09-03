@@ -1,12 +1,9 @@
 /* ============================================================
-   ARIQ / ARCHIVE — data & interactions
-   Edit the CONFIG block below to make this site yours.
+ FOLLOW ME ON IG!
    ============================================================ */
 
 /* ------------------------------------------------------------
-   CONFIG — fill these in. Anything left as the default
-   placeholder value is automatically hidden instead of being
-   rendered as a dead/broken link.
+ THX...TO EV TEAM
 ------------------------------------------------------------ */
 const GITHUB_USERNAME = "rixs4k";
 
@@ -44,8 +41,8 @@ const projects = [
     type: "WEB APP",
     description: "A personal finance tracker using Google Sheets as a database. Daily dues tracking module, animated neobrutalist UI, dark matte theme, and a real test suite behind it.",
     stack: ["JavaScript", "Google Sheets API", "CSS"],
-    github: "",
-    demo: ""
+    github: "https://github.com/RXSofc/moneymoneymoney",
+    demo: "https://rxsofc.github.io/moneymoneymoney/"
   },
   {
     number: "05",
@@ -53,7 +50,7 @@ const projects = [
     type: "WEB APP",
     description: "A real-time chat app on Firebase, rebuilt with a full bug-fix pass and a deep crimson neobrutalism redesign.",
     stack: ["JavaScript", "Firebase", "CSS"],
-    github: "",
+    github: "https://github.com/RXSofc/onevone",
     demo: ""
   },
 ];
@@ -62,7 +59,7 @@ const contacts = {
   instagram: "YOUR_INSTAGRAM",
   whatsapp:  "YOUR_WHATSAPP_NUMBER",
   facebook:  "YOUR_FACEBOOK",
-  email:     "YOUR_EMAIL@example.com",
+  email:     "rxsofc@gmail.com",
 };
 
 /* ------------------------------------------------------------
@@ -81,23 +78,14 @@ function esc(str) {
     .replace(/'/g, "&#39;");
 }
 
-/* ------------------------------------------------------------
-   1. BUILD PROJECT FOLDERS — compact accordion, one open at a
-      time. Collapsed rows keep the whole 5-item index short
-      enough to fit one screen; tap a row to expand it in place.
------------------------------------------------------------- */
 const stackEl = document.getElementById("folder-stack");
 
 if (stackEl) {
   projects.forEach((p, i) => {
     const li = document.createElement("li");
     li.className = "folder";
-    if (i === 0) li.classList.add("open"); // preview the interaction on load
+    if (i === 0) li.classList.add("open"); 
 
-    // Primary CTA always resolves to *something a visitor can click*:
-    // prefer the live demo, fall back to the repo, and if neither is
-    // configured yet, render a clearly-disabled button instead of a
-    // dead link or nothing at all.
     const primaryUrl = p.demo || p.github || "";
     const primaryLabel = p.demo ? "VIEW PROJECT" : (p.github ? "VIEW SOURCE" : "NOT PUBLISHED YET");
     const secondaryUrl = p.demo && p.github ? p.github : "";
@@ -146,12 +134,7 @@ if (stackEl) {
   });
 }
 
-/* ------------------------------------------------------------
-   2. ABOUT TIMELINE — same compact-accordion treatment as the
-      project folders, so all 6 entries fit one screen too.
-      Multiple entries can stay open at once (it's a reading log,
-      not a single-focus picker like the project index).
------------------------------------------------------------- */
+
 document.querySelectorAll(".tl-item").forEach(item => {
   const head = item.querySelector(".tl-head");
   if (!head) return;
@@ -162,9 +145,7 @@ document.querySelectorAll(".tl-item").forEach(item => {
   });
 });
 
-/* ------------------------------------------------------------
-   3. GITHUB API (graceful fallback built into HTML)
------------------------------------------------------------- */
+
 (() => {
   const body = document.getElementById("gh-body");
   if (!body) return;
@@ -188,14 +169,12 @@ document.querySelectorAll(".tl-item").forEach(item => {
         </div>`;
     })
     .catch(() => {
-      /* network error, rate limit, or bad username — fallback markup already in place */
+    
     })
     .finally(() => clearTimeout(timeout));
 })();
 
-/* ------------------------------------------------------------
-   4. CONTACT CHANNELS — placeholders are skipped, not rendered
------------------------------------------------------------- */
+
 (() => {
   const el = document.getElementById("channels");
   if (!el) return;
@@ -229,9 +208,7 @@ document.querySelectorAll(".tl-item").forEach(item => {
     : `<p class="channel-empty">Contact channels aren't configured yet — edit the <code>contacts</code> object in script.js.</p>`;
 })();
 
-/* ------------------------------------------------------------
-   5. REVEAL ON SCROLL (IntersectionObserver)
------------------------------------------------------------- */
+
 if ("IntersectionObserver" in window) {
   const io = new IntersectionObserver(entries => {
     entries.forEach(en => {
@@ -243,13 +220,10 @@ if ("IntersectionObserver" in window) {
   }, { threshold: 0.15 });
   document.querySelectorAll(".reveal, .reveal-up").forEach(el => io.observe(el));
 } else {
-  // no IntersectionObserver support — just show everything
   document.querySelectorAll(".reveal, .reveal-up").forEach(el => el.classList.add("in-view"));
 }
 
-/* ------------------------------------------------------------
-   6. MOBILE NAV
------------------------------------------------------------- */
+
 (() => {
   const nav = document.querySelector(".nav");
   const toggle = document.querySelector(".nav-toggle");
@@ -267,7 +241,7 @@ if ("IntersectionObserver" in window) {
       toggle.textContent = "INDEX";
     }));
 
-  // active section highlight
+ 
   const sections = [...document.querySelectorAll("main section")];
   const navLinks = [...document.querySelectorAll(".nav-list a")];
   if (sections.length && navLinks.length && "IntersectionObserver" in window) {
@@ -282,17 +256,7 @@ if ("IntersectionObserver" in window) {
   }
 })();
 
-/* ------------------------------------------------------------
-   7. LIVE CHARACTER AVATAR — loads Ariiq's own character model
-      (assets/EVILVOIDteam_icon.glb, optimised down from a 76.8 MB
-      export to ~2.2 MB — 52.8k vertices, 1024px webp textures —
-      so it actually loads quickly on mobile). Auto-fits the camera
-      to whatever the model's real bounding box turns out to be
-      (no more guessing proportions blind), idles with a slow
-      turntable + gentle bob, and responds to drag. Falls back to
-      the plain "MAA" monogram if Three.js/GLTFLoader/WebGL isn't
-      available, or if the model itself fails to load.
------------------------------------------------------------- */
+
 (() => {
   const wrap = document.getElementById("avatar-3d");
   const canvas = document.getElementById("avatar-canvas");
@@ -318,14 +282,12 @@ if ("IntersectionObserver" in window) {
     return;
   }
   if (!renderer.getContext()) { showFallback(); return; }
-  renderer.outputEncoding = THREE.sRGBEncoding; // correct API for r128 (the CDN version loaded)
+  renderer.outputEncoding = THREE.sRGBEncoding; 
   renderer.physicallyCorrectLights = true;
 
   const scene = new THREE.Scene();
   const camera = new THREE.PerspectiveCamera(32, 1, 0.05, 1000);
 
-  // a simple neutral studio rig — bright enough to read the model's
-  // own PBR textures without blowing them out
   scene.add(new THREE.HemisphereLight(0xfff6ea, 0x24211f, 0.9));
   const key = new THREE.DirectionalLight(0xfff4e6, 1.1);
   key.position.set(3, 5, 4);
@@ -334,11 +296,6 @@ if ("IntersectionObserver" in window) {
   rim.position.set(-4, 2, -3);
   scene.add(rim);
 
-  // a soft contact shadow — a radial-gradient sprite beneath the
-  // model, coloured from the page's own --text (noir) so it reads
-  // as a real dropped shadow rather than a light source. A gradient
-  // sprite (vs. a real-time shadow map) stays scale-safe regardless
-  // of the model's native units and is guaranteed to render.
   const inkHex = (getComputedStyle(document.documentElement).getPropertyValue("--text") || "#060D0C").trim() || "#060D0C";
   const inkRgb = new THREE.Color(inkHex);
   const inkRgbStr = `${Math.round(inkRgb.r * 255)},${Math.round(inkRgb.g * 255)},${Math.round(inkRgb.b * 255)}`;
@@ -365,9 +322,9 @@ if ("IntersectionObserver" in window) {
   });
   const glow = new THREE.Mesh(new THREE.PlaneGeometry(1, 1), glowMat);
   glow.rotation.x = -Math.PI / 2;
-  scene.add(glow); // stays put in the scene (not the drag pivot) like a real floor mark
+  scene.add(glow); 
 
-  const pivot = new THREE.Group(); // drag/idle rotation happens here
+  const pivot = new THREE.Group(); 
   scene.add(pivot);
 
   const clamp = (v, lo, hi) => Math.max(lo, Math.min(hi, v));
@@ -393,10 +350,6 @@ if ("IntersectionObserver" in window) {
     (gltf) => {
       const model = gltf.scene;
 
-      // auto-fit: recentre the model on its own bounding-box centre
-      // and back the camera off just far enough to frame it with a
-      // comfortable margin, whatever the model's native scale/pivot
-      // turns out to be — no more hand-guessed numbers.
       const box = new THREE.Box3().setFromObject(model);
       const size = box.getSize(new THREE.Vector3());
       const center = box.getCenter(new THREE.Vector3());
@@ -409,12 +362,10 @@ if ("IntersectionObserver" in window) {
       camera.far = fitDistance * 100;
       camera.updateProjectionMatrix();
 
-      // size and place the fire-glow contact shadow relative to the
-      // model's own measured footprint — same auto-fit approach as
-      // the camera above, so it's never a guessed absolute size
+     
       glow.scale.setScalar(radius * 2.4);
       glow.userData.baseScale = radius * 2.4;
-      glow.position.y = box.min.y - center.y + radius * 0.015; // tiny lift, avoids z-fighting with the model's own base
+      glow.position.y = box.min.y - center.y + radius * 0.015; 
 
       pivot.add(model);
       hideLoading();
@@ -430,7 +381,7 @@ if ("IntersectionObserver" in window) {
     }
   );
 
-  // drag-to-rotate (pointer events cover mouse, touch, and pen alike)
+ 
   let dragging = false, lastX = 0, lastY = 0, spin = 0, settleUntil = 0;
 
   canvas.addEventListener("pointerdown", (e) => {
@@ -451,7 +402,7 @@ if ("IntersectionObserver" in window) {
     if (!dragging) return;
     dragging = false;
     wrap.style.cursor = "grab";
-    settleUntil = performance.now() + 1400; // let a flicked spin ease out before resuming idle drift
+    settleUntil = performance.now() + 1400;
   };
   canvas.addEventListener("pointerup", release);
   canvas.addEventListener("pointercancel", release);
@@ -465,24 +416,19 @@ if ("IntersectionObserver" in window) {
     if (reduceMotion) {
       pivot.rotation.set(0, .3, 0);
       pivot.position.y = 0;
-      glowMat.opacity = 1; // steady, no motion
+      glowMat.opacity = 1; 
     } else {
       if (!dragging) {
         if (now < settleUntil) {
           spin *= .93;
           pivot.rotation.y += spin;
         } else {
-          pivot.rotation.y += .0018; // idle turntable drift
+          pivot.rotation.y += .0018; 
         }
         pivot.position.y = Math.sin(elapsed * .9) * .04;
       }
-      // the shadow doesn't animate on its own — it just answers to
-      // how high the character is currently bobbing (same .9 phase
-      // as pivot.position.y above), the way a real dropped shadow
-      // would faintly shrink and soften as the thing above it lifts
-      // a little further away. One shared rhythm instead of a second
-      // competing animation.
-      const lift = Math.sin(elapsed * .9); // -1..1, same phase as the bob
+
+      const lift = Math.sin(elapsed * .9); 
       glowMat.opacity = clamp(1 - lift * 0.12, 0.8, 1);
       const breathe = 1 - lift * 0.04;
       const base = glow.userData.baseScale || glow.scale.x;
@@ -505,9 +451,7 @@ if ("IntersectionObserver" in window) {
   });
 })();
 
-/* ------------------------------------------------------------
-   8. TINY CLOCK METADATA (identity header)
------------------------------------------------------------- */
+
 (() => {
   const clockEl = document.querySelector("[data-clock]");
   if (!clockEl) return;
